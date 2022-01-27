@@ -1,16 +1,16 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Navbar from "./components/Layout/Navbar";
-import Footer from "./components/Layout/Footer";
+import { Route, Routes } from "react-router-dom";
+import { Home, About, NotFound } from "./pages";
 
 function App() {
   return (
-    <Router>
-      <Layout />
-      {/* <Navbar />
-      <main></main>
-      <Footer /> */}
-    </Router>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/notfound" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 

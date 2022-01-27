@@ -1,4 +1,4 @@
-import { Container, Flex, Button, Icon, chakra } from "@chakra-ui/react";
+import { Container, Flex, chakra } from "@chakra-ui/react";
 
 function Footer() {
   const footerYear = new Date().getFullYear();

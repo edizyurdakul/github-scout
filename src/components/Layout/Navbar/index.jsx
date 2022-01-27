@@ -14,36 +14,35 @@ function Navbar() {
       >
         <Flex justifyContent="space-between">
           <Flex alignItems="center">
-            <Button variant="ghost">
-              <Icon boxSize={5} as={FaGithub} />
-              <Link
-                ml={4}
-                fontSize="md"
-                fontWeight="semibold"
-                as={RouteLink}
-                to="/"
-                _css={{}}
-                _hover={{ textDecoration: "none" }}
-              >
-                Github Finder
-              </Link>
-            </Button>
+            <Link
+              ml={4}
+              fontSize="md"
+              fontWeight="semibold"
+              as={RouteLink}
+              to="/"
+              _css={{}}
+              _hover={{ textDecoration: "none" }}
+            >
+              <Button variant="ghost">
+                <Icon boxSize={5} mr={2} as={FaGithub} />
+                Github Scout
+              </Button>
+            </Link>
           </Flex>
           <Flex>
-            <Button variant="ghost">
-              <Link as={RouteLink} to="/" _hover={{ textDecoration: "none" }}>
-                Home
-              </Link>
-            </Button>
-            <Button ml={2} variant="ghost">
-              <Link
-                as={RouteLink}
-                to="/about"
-                _hover={{ textDecoration: "none" }}
-              >
+            <Link as={RouteLink} to="/" _hover={{ textDecoration: "none" }}>
+              <Button variant="ghost"> Home </Button>
+            </Link>
+
+            <Link
+              as={RouteLink}
+              to="/about"
+              _hover={{ textDecoration: "none" }}
+            >
+              <Button ml={2} variant="ghost">
                 About
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </Flex>
         </Flex>
       </Container>
