@@ -13,7 +13,7 @@ import {
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { Link as RouteLink } from "react-router-dom";
 
-function UserCard({ name, avatar, url }) {
+function UserCard({ user: { login, avatar_url, html_url } }) {
   return (
     <Center py={6}>
       <Box
@@ -24,13 +24,13 @@ function UserCard({ name, avatar, url }) {
         rounded={"md"}
         overflow={"hidden"}
       >
-        <Image h={"120px"} w={"full"} src={avatar} objectFit={"cover"} />
+        <Image h={"120px"} w={"full"} src={avatar_url} objectFit={"cover"} />
         <Flex justify={"center"}></Flex>
 
         <Box p={6}>
           <Stack spacing={0} align={"center"} mb={5}>
             <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
-              {name}
+              {login}
             </Heading>
             <Text color={"gray.500"}>Frontend Developer</Text>
           </Stack>
@@ -69,7 +69,7 @@ function UserCard({ name, avatar, url }) {
               View Profile
             </Button>
           </Link>
-          <Link href={url} isExternal _hover={{ textDecoration: "none" }}>
+          <Link href={html_url} isExternal _hover={{ textDecoration: "none" }}>
             <Button
               w={"full"}
               mt={2}
