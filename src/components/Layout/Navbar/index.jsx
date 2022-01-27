@@ -1,6 +1,19 @@
 import { FaGithub } from "react-icons/fa";
 import { Link as RouteLink } from "react-router-dom";
-import { Link, Container, Flex, Button, Icon, chakra } from "@chakra-ui/react";
+import {
+  Link,
+  Container,
+  Flex,
+  Button,
+  Icon,
+  chakra,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 function Navbar() {
   return (
@@ -29,11 +42,39 @@ function Navbar() {
               </Button>
             </Link>
           </Flex>
-          <Flex>
+          <Menu
+            display={{ base: "inline-flex", sm: "inline-flex", md: "none" }}
+          >
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="ghost"
+              display={{ base: "inline-flex", sm: "inline-flex", md: "none" }}
+            >
+              Actions
+            </MenuButton>
+            <MenuList>
+              <MenuItem>
+                <Link as={RouteLink} to="/" _hover={{ textDecoration: "none" }}>
+                  Home
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link
+                  as={RouteLink}
+                  to="/about"
+                  _hover={{ textDecoration: "none" }}
+                >
+                  About
+                </Link>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+          <Flex display={{ base: "none", sm: "none", md: "flex" }}>
             <Link as={RouteLink} to="/" _hover={{ textDecoration: "none" }}>
               <Button variant="ghost"> Home </Button>
             </Link>
-
             <Link
               as={RouteLink}
               to="/about"

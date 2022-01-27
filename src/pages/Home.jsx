@@ -1,7 +1,11 @@
-import React from "react";
+import UserResults from "../components/Users/UserResults";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <UserResults />
+    </>
+  );
 }
 
 export default Home;

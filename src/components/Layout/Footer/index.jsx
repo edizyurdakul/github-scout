@@ -1,8 +1,6 @@
 import { Container, Flex, chakra } from "@chakra-ui/react";
 
 function Footer() {
-  const footerYear = new Date().getFullYear();
-
   return (
     <chakra.footer px={4}>
       <Container
