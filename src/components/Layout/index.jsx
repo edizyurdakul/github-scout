@@ -1,15 +1,9 @@
 import Navbar from "./Navbar";
-import Footer from "./Footer";
 import { Container, chakra } from "@chakra-ui/react";
 
 function Layout({ children }) {
   return (
-    <chakra.div
-      display="flex"
-      flexDirection="column"
-      justifyContent="space-between"
-      height="100vh"
-    >
+    <chakra.div>
       <Navbar />
       <main>
         <Container
@@ -26,7 +20,6 @@ function Layout({ children }) {
           {children}
         </Container>
       </main>
-      <Footer />
     </chakra.div>
   );
 }

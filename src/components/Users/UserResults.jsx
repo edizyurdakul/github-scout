@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import GithubContext from "../../context/github/GithubContext";
-import { Spinner, Grid, GridItem, chakra } from "@chakra-ui/react";
+import { Spinner, Grid, GridItem, Text, chakra } from "@chakra-ui/react";
 import UserCard from "./UserCard";
 
 function UserResults() {
@@ -31,9 +31,10 @@ function UserResults() {
         justifyContent="center"
         alignItems="center"
         fontSize="sm"
+        mt={"4"}
       >
-        <Spinner size="lg" color="purple.500" mr={2} />
-        Loading...
+        <Spinner size="lg" color="purple.500" />
+        <Text ml={4}>Loading...</Text>
       </chakra.div>
     );
   }
