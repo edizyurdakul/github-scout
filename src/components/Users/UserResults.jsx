@@ -1,13 +1,6 @@
 import { useContext } from "react";
 import GithubContext from "../../context/github/GithubContext";
-import {
-  Spinner,
-  Grid,
-  GridItem,
-  Text,
-  useColorModeValue,
-  chakra,
-} from "@chakra-ui/react";
+import { Spinner, Grid, GridItem, Text, chakra } from "@chakra-ui/react";
 import UserCard from "./UserCard";
 
 function UserResults() {
