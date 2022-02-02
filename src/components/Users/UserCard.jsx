@@ -26,39 +26,21 @@ function UserCard({ user: { login, avatar_url, html_url } }) {
       >
         <Image h={"120px"} w={"full"} src={avatar_url} objectFit={"cover"} />
         <Flex justify={"center"}></Flex>
-
         <Box p={6}>
           <Stack spacing={0} align={"center"} mb={5}>
             <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
               {login}
             </Heading>
-            <Text color={"gray.500"}>Frontend Developer</Text>
-          </Stack>
-
-          <Stack direction={"row"} justify={"center"} spacing={6}>
-            <Stack spacing={0} align={"center"}>
-              <Text fontWeight={600}>23k</Text>
-              <Text fontSize={"sm"} color={"gray.500"}>
-                Followers
-              </Text>
-            </Stack>
-            <Stack spacing={0} align={"center"}>
-              <Text fontWeight={600}>23k</Text>
-              <Text fontSize={"sm"} color={"gray.500"}>
-                Followers
-              </Text>
-            </Stack>
           </Stack>
 
           <Link
             as={RouteLink}
-            to="/about"
-            isExternal
+            to={`/user/${login}`}
             _hover={{ textDecoration: "none" }}
           >
             <Button
               w={"full"}
-              mt={8}
+              mt={2}
               colorScheme={"purple"}
               rounded={"md"}
               _hover={{

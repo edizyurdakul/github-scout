@@ -10,30 +10,33 @@ import {
   Container,
   Flex,
 } from "@chakra-ui/react";
+import { searchUsers } from "../../context/github/GithubActions";
 
 function UserSearch() {
   const [text, setText] = useState("");
-  const { users, searchUsers, setClear } = useContext(GithubContext);
+  const { users, dispatch } = useContext(GithubContext);
   const { setAlert } = useContext(AlertContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (text === "") {
       setAlert("Please enter something", "error");
     } else {
-      searchUsers(text);
+      dispatch({ type: "SET_LOADING" });
+      const users = await searchUsers(text);
+      dispatch({ type: "GET_USERS", payload: users });
       setText("");
     }
   };
 
   const handleClear = () => {
-    setClear();
+    dispatch({ type: "CLEAR_USERS" });
   };
   return (
-    <Flex align={"center"} justify={"center"}>
+    <Flex flexDirection={"column"} alignItems={"flex-end"} justify={"center"}>
       <Container
-        maxW={"2xl"}
+        maxW={"100%"}
         bgColor={useColorModeValue("gray.300", "gray.800")}
         boxShadow={"xl"}
         rounded={"lg"}
@@ -74,23 +77,22 @@ function UserSearch() {
             >
               Search
             </Button>
-            {users.length > 0 && (
-              <Button
-                variant={"outline"}
-                _hover={{
-                  transform: "translateY(-2px)",
-                  boxShadow: "lg",
-                }}
-                w="100%"
-                mt={2}
-                onClick={handleClear}
-              >
-                Clear
-              </Button>
-            )}
           </FormControl>
         </Stack>
       </Container>
+      {users.length > 0 && (
+        <Button
+          colorScheme={"red"}
+          _hover={{
+            transform: "translateY(-2px)",
+            boxShadow: "lg",
+          }}
+          mt={6}
+          onClick={handleClear}
+        >
+          Clear
+        </Button>
+      )}
     </Flex>
   );
 }

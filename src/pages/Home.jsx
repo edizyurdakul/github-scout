@@ -6,8 +6,8 @@ function Home() {
   return (
     <>
       <AnimatePresence>
-        <AlertComponent />
-        <UserSearch />
+        <AlertComponent key={1} />
+        <UserSearch key={2} />
       </AnimatePresence>
       <UserResults />
     </>

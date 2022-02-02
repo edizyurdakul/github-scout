@@ -13,7 +13,7 @@ function AlertComponent() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Container maxW={"2xl"} px={0}>
+        <Container maxW="container.xl" px={0}>
           <Alert status={alert.type} borderRadius={"md"} mb={4}>
             <AlertIcon />
             {alert.msg}
