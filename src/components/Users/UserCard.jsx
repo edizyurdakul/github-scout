@@ -4,7 +4,6 @@ import {
   Center,
   Image,
   Flex,
-  Text,
   Stack,
   Button,
   useColorModeValue,
