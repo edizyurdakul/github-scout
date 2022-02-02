@@ -17,9 +17,9 @@ function UserCard({ user: { login, avatar_url, html_url } }) {
   return (
     <Center py={6}>
       <Box
-        maxW={"270px"}
+        maxW={"100%"}
         w={"full"}
-        bg={useColorModeValue("white", "gray.800")}
+        bgColor={useColorModeValue("gray.300", "gray.800")}
         boxShadow={"2xl"}
         rounded={"md"}
         overflow={"hidden"}
@@ -59,7 +59,7 @@ function UserCard({ user: { login, avatar_url, html_url } }) {
             <Button
               w={"full"}
               mt={8}
-              bgColor={"purple.500"}
+              colorScheme={"purple"}
               rounded={"md"}
               _hover={{
                 transform: "translateY(-2px)",
@@ -72,9 +72,8 @@ function UserCard({ user: { login, avatar_url, html_url } }) {
           <Link href={html_url} isExternal _hover={{ textDecoration: "none" }}>
             <Button
               w={"full"}
-              mt={2}
-              bg={useColorModeValue("#151f21", "gray.900")}
-              color={"white"}
+              mt={4}
+              colorScheme={"gray"}
               rounded={"md"}
               _hover={{
                 transform: "translateY(-2px)",

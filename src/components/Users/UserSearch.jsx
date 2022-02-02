@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import GithubContext from "../../context/github/GithubContext";
+import AlertContext from "../../context/alert/AlertContext";
 import {
   Stack,
   FormControl,
@@ -12,14 +13,14 @@ import {
 
 function UserSearch() {
   const [text, setText] = useState("");
-
   const { users, searchUsers, setClear } = useContext(GithubContext);
+  const { setAlert } = useContext(AlertContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (text === "") {
-      alert("Please enter something");
+      setAlert("Please enter something", "error");
     } else {
       searchUsers(text);
       setText("");
@@ -33,7 +34,7 @@ function UserSearch() {
     <Flex align={"center"} justify={"center"}>
       <Container
         maxW={"2xl"}
-        bg={useColorModeValue("white", "gray.800")}
+        bgColor={useColorModeValue("gray.300", "gray.800")}
         boxShadow={"xl"}
         rounded={"lg"}
         p={6}
@@ -64,7 +65,7 @@ function UserSearch() {
           <FormControl w={{ base: "100%", md: "40%" }}>
             <Button
               type="submit"
-              bgColor="purple.500"
+              colorScheme={"purple"}
               _hover={{
                 transform: "translateY(-2px)",
                 boxShadow: "lg",
