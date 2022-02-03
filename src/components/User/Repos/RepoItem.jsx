@@ -25,7 +25,6 @@ const getDayDiff = (date) => {
 };
 
 function RepoItem({ repo }) {
-  console.log(repo);
   return (
     <Box>
       <LinkBox
