@@ -6,7 +6,6 @@ My goal was to simulate a proper usage of an API endpoint(GitHub API) and learn 
 
 ## How to navigate this project
 
-- Somewhat complex stateful logic: [Link to example code on GitHub]
 - Styling and components with Chakra UI, simple and accessible component library.
 - The application fetches data from the GitHub API: Examples for the request [https://github.com/edizyurdakul/github-scout/blob/main/src/context/github/GithubContext.js](https://github.com/edizyurdakul/github-scout/blob/main/src/context/github/GithubContext.js)
 
@@ -14,8 +13,6 @@ My goal was to simulate a proper usage of an API endpoint(GitHub API) and learn 
 
 - Chakra UI is a great component library, for fast development.
 - My main goal is to become a front end developer.  That's why I decided to use an existing API rather to create a custom backend server.
-- Testing is an essential part of production applications. Testing Library is the go-to library in the
-React community. I covered the essential features of the app with tests.
 
 ## If I had more time I would change this
 
